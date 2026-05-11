@@ -1,0 +1,207 @@
+/* ── Variables — Noche Dorada invertida ── */
+:root {
+    --bg: #F2F2F0;
+    --bg-panel: #E8E7E3;
+    --text: #0D0D0D;
+    --muted: #888888;
+    --border: #DDDDD8;
+    --white: #FFFFFF;
+    --accent: #D4A853;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+}
+
+/* ── HERO ── */
+.hero {
+    display: flex;
+    /* fila: columna texto | columna imagen */
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+/* Columna izquierda — texto */
+.hero-content {
+    display: flex;
+    /* columna interna */
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    padding: 4rem 3rem;
+    gap: 1.5rem;
+}
+
+/* Eyebrow */
+.hero-call {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    /* era 8rem, faltaba el punto */
+    font-size: .75rem;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.hero-call::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--muted);
+    flex-shrink: 0;
+}
+
+/* Título */
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--text);
+}
+
+.hero-title em {
+    font-style: italic;
+    color: var(--accent);
+}
+
+/* Descripción */
+.hero-desc {
+    font-size: .95rem;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 360px;
+}
+
+/* Botones */
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: .5rem;
+}
+
+.btn-primary {
+    font-family: 'DM Sans', sans-serif;
+    font-size: .85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--text);
+    padding: .9rem 2rem;
+    text-decoration: none;
+    transition: opacity .2s;
+}
+
+.btn-primary:hover {
+    opacity: .75;
+}
+
+.btn-ghost {
+    font-size: .85rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color .2s, border-color .2s;
+}
+
+.btn-ghost:hover {
+    color: var(--text);
+    border-color: var(--text);
+}
+
+/* Stats */
+.hero-stats {
+    display: flex;
+    gap: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 0.5px solid var(--border);
+}
+
+.stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--accent);
+    display: block;
+}
+
+.stat-label {
+    font-size: .75rem;
+    color: var(--muted);
+    letter-spacing: .5px;
+}
+
+/* Columna derecha — imagen */
+.hero-image {
+    flex: 1;
+    background: var(--bg-panel);
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Badge flotante */
+.badge {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: var(--white);
+    border: 0.5px solid var(--accent);
+    padding: .6rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .2rem;
+    z-index: 2;
+}
+
+.badge-top {
+    font-size: .65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.badge-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+/* Línea decorativa lateral */
+.hero-image::after {
+    content: 'NUEVA COLECCIÓN · SS 2026 · NUEVA COLECCIÓN · SS 2026 ·';
+    position: absolute;
+    left: -80px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-size: .65rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--border);
+    white-space: nowrap;
+}
