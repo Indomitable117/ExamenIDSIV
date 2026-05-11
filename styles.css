@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+.site-header {
+    background-color: #000;
+    color: #C9A227;
+    padding: 20px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo h1 {
+    font-size: 28px;
+}
+.menu ul {
+    list-style: none;
+
+    display: flex;
+    gap: 25px;
+}
+.menu a {
+    color: #C9A227;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
