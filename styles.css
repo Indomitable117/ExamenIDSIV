@@ -1,3 +1,83 @@
+.catalogo {
+    padding: 4rem 3rem;
+}
+
+.catalogo-header {
+    margin-bottom: 2rem;
+}
+
+.catalogo-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: .3rem;
+}
+
+.catalogo-desc {
+    font-size: .85rem;
+    color: var(--muted);
+}
+
+/* ── GRID ── */
+.catalogo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+/* ── TARJETA ── */
+.producto {
+    background: var(--white);
+    border: 0.5px solid var(--border);
+}
+
+.producto-img {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 3 / 4;
+}
+
+.producto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.producto:hover .producto-img img {
+    transform: scale(1.04);
+}
+
+.producto-tag {
+    position: absolute;
+    top: .8rem;
+    left: .8rem;
+    background: var(--accent);
+    color: var(--white);
+    font-size: .7rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: .3rem .7rem;
+}
+
+.producto-info {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.producto-nombre {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.producto-talla {
 /* ── Variables — Paleta de colores de la página ── */
 :root {
     --bg: #F2F2F0;
@@ -148,6 +228,37 @@ body {
     letter-spacing: .5px;
 }
 
+.producto-precio {
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-top: .2rem;
+}
+
+/* ── MEDIA QUERIES ── */
+@media (max-width: 768px) {
+    .catalogo {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .catalogo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalogo {
+        padding: 2rem 1rem;
+    }
+
+    .catalogo-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: .8rem;
+    }
+
+    .catalogo-titulo {
+        font-size: 1.5rem;
 /* Columna derecha — imagen */
 .hero-image {
     flex: 1;
